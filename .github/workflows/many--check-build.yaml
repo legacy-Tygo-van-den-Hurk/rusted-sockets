@@ -1,0 +1,24 @@
+name: Check
+# Checks if all things are still buildable.
+
+on:
+  pull_request:
+    branches: [main, master, release, development]
+    types: [opened, synchronize, reopened]
+    paths: [ nix/**, src/**, Cargo.*, '**.lock', ]
+  push:
+    tags: [ v*.*.* ]
+    branches: [main, master, release, development]
+    paths: [ nix/**, src/**, Cargo.*, '**.lock', ]
+
+jobs: 
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.3.0
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31.7.0
+      - name: Build package
+        run: nix build --print-build-logs
