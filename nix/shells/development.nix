@@ -3,8 +3,8 @@ let
 in
 {
   perSystem =
-    { pkgs, ... }:
-    let 
+    { pkgs, config, ... }:
+    let
       formatters = builtins.attrValues config.treefmt.build.programs;
       hooks = config.pre-commit.settings.enabledPackages;
       tooling = with pkgs; [
