@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "jnoortheen.nix-ide",
+        "rust-lang.rust-analyzer",
+        "streetsidesoftware.code-spell-checker",
+    ],
+}
