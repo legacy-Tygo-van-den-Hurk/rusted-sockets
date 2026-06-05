@@ -1,6 +1,8 @@
 {
   imports = [ ./development.nix ];
-  perSystem = { self', ... }: {
-    devShells.default = self'.devShells.development;
-  };
+  perSystem =
+    { self', ... }:
+    {
+      devShells.default = self'.devShells.development;
+    };
 }

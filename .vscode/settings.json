@@ -30,6 +30,7 @@
         "pkgs",
         "rustc",
         "stdenv",
+        "treefmt",
         "Tygo"
     ]
 }

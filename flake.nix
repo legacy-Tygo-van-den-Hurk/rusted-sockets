@@ -3,7 +3,7 @@
 
   # A collection of packages for the Nix package manager
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  
+
   # Flake basics described using the module system
   inputs.flake-parts.url = "github:hercules-ci/flake-parts";
 
